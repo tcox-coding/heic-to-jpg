@@ -76,11 +76,12 @@ class HeicToJpgConverter:
         cur_progress = 100/len(files)
         print(files)
         for i, file in enumerate(files):
+            print(i, file)
             cur_progress += 100/len(files)
             self.pb.step(cur_progress)
             self.pb.update()
             self.pb.update_idletasks()
-            if file.endswith(".heic"):
+            if file.endswith(".heic") or file.endswith(".HEIC"):
                 file_path = os.path.join(self.filename, file)
                 print(file_path)
                 
